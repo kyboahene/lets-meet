@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 // icons
 import Plus from "@/assets/icons/plus";
@@ -15,7 +16,6 @@ import { Meeting, MeetingType } from "@/lib/types";
 import JoinMeetingModal from "../modals/join-meeting-modal";
 import InstantMeetingModal from "../modals/instant-meeting-modal";
 import ScheduledMeetingModal from "../modals/schedule-meeting-modal";
-import { useRouter } from "next/navigation";
 
 const MeetingList = () => {
   const router = useRouter();

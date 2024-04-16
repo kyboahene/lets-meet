@@ -31,3 +31,11 @@ export const sidebarLinks = [
         icon: Plus
     }
 ]
+
+export const avatarImages = [
+    "/images/avatar.jpg",
+    "/images/avatar-1.jpg",
+    "/images/avatar-2.jpg",
+    "/images/avatar-3.jpg",
+    "/images/avatar-4.jpg"
+]

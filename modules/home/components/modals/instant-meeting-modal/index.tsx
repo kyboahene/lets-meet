@@ -35,7 +35,7 @@ const InstantMeetingModal = ({ isOpen, setIsOpen }: ModalProps) => {
 
     setIsLoading(true);
     try {
-      const call = await createCall(new Date(), "Instant meeting", client);
+      const call = await createCall("Instant meeting", client, new Date());
 
       if (call) router.push(`/meeting/${call.id}`);
 
@@ -51,7 +51,7 @@ const InstantMeetingModal = ({ isOpen, setIsOpen }: ModalProps) => {
     <Dialog open={isOpen} onOpenChange={handleModalClose}>
       <DialogContent className="bg-dark-1 w-full px-6 py-9 border-none text-white">
         <div className="flex flex-col gap-6">
-          <h1 className={cn("text-3xl font-bold leading-[42px]")}>
+          <h1 className={cn("text-3xl text-center font-bold leading-[42px]")}>
             Start an instant meeting
           </h1>
           <Button onClick={() => createMeeting()} disabled={isLoading}>

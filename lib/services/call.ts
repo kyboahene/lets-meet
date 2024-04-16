@@ -1,9 +1,9 @@
 import { StreamVideoClient } from "@stream-io/video-react-sdk";
 
 export async function createCall(
-    dateTime: Date,
     description: string,
     client: StreamVideoClient,
+    dateTime: Date | null,
 ) {
     try {
         const id = crypto.randomUUID();
@@ -11,7 +11,7 @@ export async function createCall(
 
         if (!call) throw new Error("Failed to create call");
 
-        const startsAt = dateTime.toISOString();
+        const startsAt = dateTime ? dateTime.toISOString() : new Date().toISOString();
 
         await call.getOrCreate({
             data: {

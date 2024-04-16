@@ -22,3 +22,7 @@ export enum MeetingType {
     JOIN_MEETING = 'isJoiningMeeting',
     INSTANT_MEETING = 'isInstantMeeting'
 }
+
+export type LayoutType = "grid" | "speaker-left" | "speaker-right";
+
+export type CallType = 'ended' | 'upcoming' | 'recordings'
