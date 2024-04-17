@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 import { Button } from "../button";
 import { toast } from "@/lib/hooks/use-toast";
-import { CopyIcon } from "lucide-react";
+import { Copy, CopyIcon } from "lucide-react";
 import { avatarImages } from "@/constants";
 
 type CallCardProps = {
@@ -70,12 +70,7 @@ const CallCard = ({
               onClick={() => handleButtonCopy()}
               className="bg-dark-4 px-6"
             >
-              <Image
-                src="/icons/copy.svg"
-                alt="feature"
-                width={20}
-                height={20}
-              />
+              <Copy size={15} />
               &nbsp; Copy Link
             </Button>
           </div>

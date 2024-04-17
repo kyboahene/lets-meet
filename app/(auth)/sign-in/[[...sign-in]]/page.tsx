@@ -1,7 +1,7 @@
 import React from "react";
 import { SignIn } from "@clerk/nextjs";
 
-const LoginPage = () => {
+const SignInPage = () => {
   return (
     <main className="h-screen w-full flex justify-center items-center">
       <SignIn />
@@ -9,4 +9,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignInPage;

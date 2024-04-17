@@ -14,6 +14,8 @@ export const useGetCalls = () => {
             if (!client || !user?.id) return
 
             try {
+                setIsLoading(true)
+
                 const { calls } = await client.queryCalls({
                     sort: [{ field: 'starts_at', direction: -1 }],
                     filter_conditions: {
@@ -50,7 +52,7 @@ export const useGetCalls = () => {
     return {
         endedCalls,
         upcomingCalls,
-        recordings: calls,
+        callRecordings: calls,
         isLoading
     }
 
