@@ -4,9 +4,6 @@ import { useUser } from "@clerk/nextjs";
 import { ReactNode, useEffect, useState } from "react";
 import { StreamVideo, StreamVideoClient } from "@stream-io/video-react-sdk";
 
-// component
-import Loader from "../../loader";
-
 // action
 import { tokenProvider } from "@/actions/stream.actions";
 import SkeletonLayout from "@/modules/skeletons/templates/skeleton-layout";

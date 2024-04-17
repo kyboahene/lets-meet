@@ -26,7 +26,7 @@ const RowData = ({ title, description }: RowDataProps) => {
         {title}:
       </h1>
       <p className="truncate text-sm font-bold max-sm:max-w-[320px] lg:text-xl">
-        {description}&apos;s Meeting Room
+        {description}
       </p>
     </div>
   );
@@ -55,7 +55,13 @@ const PersonalRoomDetails = () => {
     setIsLoading(true);
     try {
       if (!call) {
-        await createCall("Personal meeting", client, new Date());
+        const call = client.call("default", meetingId!);
+
+        await call.getOrCreate({
+          data: {
+            starts_at: new Date().toISOString(),
+          },
+        });
       }
       router.push(`/meeting/${meetingId}?personal=true`);
     } catch (error) {
@@ -67,7 +73,10 @@ const PersonalRoomDetails = () => {
 
   return (
     <div className="flex w-full flex-col gap-8 xl:max-w-[900px]">
-      <RowData title="Topic" description={user?.username ?? "User"} />
+      <RowData
+        title="Topic"
+        description={user?.username + "'s Meeting Room " ?? "User"}
+      />
       <RowData title="Meeting ID" description={meetingId} />
       <RowData title="Invite Link" description={meetingLink} />
       <div className="flex gap-5">
