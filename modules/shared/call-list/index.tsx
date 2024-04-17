@@ -105,7 +105,7 @@ const CallList = ({ type }: Props) => {
     if (type === "recordings") fetchRecordings();
   }, [type, callRecordings]);
 
-  if (isLoading) return <SkeletonPageContent/>
+  if (isLoading) return <SkeletonPageContent />;
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -116,7 +116,7 @@ const CallList = ({ type }: Props) => {
             title={
               (call as Call).state?.custom.description.substring(0, 20) ||
               (call as CallRecording).filename.substring(0, 20) ||
-              "No description"
+              "Personal Meeting"
             }
             date={
               (call as Call).state?.startsAt?.toLocaleString() ||
@@ -124,11 +124,11 @@ const CallList = ({ type }: Props) => {
             }
             icon={icon}
             isPreviousMeeting={type === "ended"}
-            buttonIcon={areRecordings ? <Play /> : null}
+            buttonIcon={areRecordings ? <Play size={15} /> : null}
             buttonText={areRecordings ? "Play" : "Start"}
             handleClick={
               areRecordings
-                ? () => router.push(`/meeting/${(call as CallRecording).url}`)
+                ? () => router.push(`${(call as CallRecording).url}`)
                 : () => router.push(`/meeting/${(call as Call).id}`)
             }
             link={

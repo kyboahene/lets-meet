@@ -4,7 +4,7 @@ export type Meeting = {
     icon: ReactNode
     title: string
     description: string
-    type: MeetingType
+    type: MeetingType | null
     bgColor: string
 }
 

@@ -2,9 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
-// icons
-import Plus from "@/assets/icons/plus";
+import { Calendar, Plus, UserPlus, Video } from "lucide-react";
 
 // components
 import MeetingCard from "./meeting-card";
@@ -36,29 +34,29 @@ const MeetingList = () => {
       bgColor: "bg-orange-1",
     },
     {
-      icon: <Plus />,
+      icon: <UserPlus />,
       title: "Join Meeting",
       description: "via invitation link",
       type: MeetingType.JOIN_MEETING,
       bgColor: "bg-blue-1",
     },
     {
-      icon: <Plus />,
+      icon: <Calendar />,
       title: "Schedule Meeting",
       description: "Plan your meeting",
       type: MeetingType.SCHEDULE_MEETING,
       bgColor: "bg-purple-1",
     },
     {
-      icon: <Plus />,
+      icon: <Video />,
       title: "View Recording",
       description: "Check out your recordings",
-      type: MeetingType.JOIN_MEETING,
+      type: null,
       bgColor: "bg-yellow-1",
     },
   ];
 
-  function handleMeetingType(meetingType: MeetingType) {
+  function handleMeetingType(meetingType: MeetingType | null) {
     switch (true) {
       case meetingType === MeetingType.INSTANT_MEETING:
         setInstantMeetingModalIsOpen(true);

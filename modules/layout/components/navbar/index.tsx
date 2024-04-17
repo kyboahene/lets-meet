@@ -9,8 +9,11 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full z-50 py-4 bg-dark-1">
       <div className="flex-between px-6">
-        <Link href="/">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-white max-sm:hidden">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="bg-white text-black rounded-full font-medium p-1">
+            LM
+          </div>
+          <h1 className="text-2xl md:text-2xl font-extrabold text-white max-sm:hidden">
             LetMeet
           </h1>
         </Link>

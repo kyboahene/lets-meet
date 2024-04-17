@@ -1,7 +1,8 @@
 import React from "react";
+import PersonalRoomPageTemplate from "@/modules/personal-room/template";
 
 const PersonalRoom = () => {
-  return <div></div>;
+  return <PersonalRoomPageTemplate />;
 };
 
 export default PersonalRoom;
